@@ -11,7 +11,8 @@
 <ul class="list-group">
   <% @cocktail.doses.each do |dose| %>
     <li class="list-group-item">
-    Dose: <%= dose.description%>
+    Dose: <%= dose.description%> | 
+    Ingredients: <%= dose.ingredient.name%>
 
   <%= link_to "Delete",
             dose_path(dose),
@@ -24,11 +25,5 @@
 <br>
 <hr>
 
-<h2>Add a new dose</h2>
- <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.input :description %>
-        <%= f.association :ingredient %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-
+<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail) %>
 <%= link_to "Back to all cokctails", :root %>
