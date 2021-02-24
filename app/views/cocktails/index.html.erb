@@ -1,15 +1,21 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h1>All cocktails</h1>
-      <ul class="list-group">
+      <%# <ul class="list-group">
         <% @cocktails.each do |c| %>
-          <li class="list-group-item">
-            <%= link_to c.name, cocktail_path(c) %>
-          </li>
-        <% end %>
-      </ul>
-      <%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn btn-primary' %>
+          <%# <li class="list-group-item"> %>
+            <%# <%= link_to c.name, cocktail_path(c) %> 
+          <%# </li> %>
+        <%# <% end %>
+      <%# </ul> %> 
+      <div class="cards">
+           <% @cocktails.each do |c| %>
+             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+              <%= link_to c.name, cocktail_path(c) %>
+            </div>
+              <% end %>
+      </div>
     </div>
   </div>
 </div>
