@@ -13,7 +13,7 @@
       <div class="cards">
            <% @cocktails.each do |c| %>
              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-              <%= link_to c.name, cocktail_path(c) %>
+              <h2><%= link_to c.name, cocktail_path(c) %></h2>
             </div>
               <% end %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"> Your cocktail can be here</div>
